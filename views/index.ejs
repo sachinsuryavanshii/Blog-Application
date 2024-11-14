@@ -1,0 +1,29 @@
+<div class="author">
+    <h1 class="author__heading">Hi, i am Sachin!</h1>
+    <p class="author__paregraph">Full Stack Developer</p>
+</div>
+
+<img src="https://images.unsplash.com/photo-1473830394358-91588751b241?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwd2luZG93fGVufDB8fDB8fHww" alt="person looking out through window" class="hero-image" width="982" height="528">
+
+<section class="artical">
+    <div class="artical__heading"><h2>Letest Posts...</h2></div>
+
+    <ul class="artical-ul">
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id%>">
+                    <span><%= post.title %></span>
+                    <span class="artical-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+    
+
+    <% if (nextPage !== null) { %>
+
+        <a href="/?page= <%= nextPage %>" class="pegination">&lt; View Older Posts</a>
+    <% } %>
+
+    
+</section>
